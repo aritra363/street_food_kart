@@ -1,0 +1,46 @@
+<html>
+<head>
+    </head>
+    <body>
+    <form action="save.php" method="post">   
+    Number:<input type="number" required="required" id="num" name="numb"><br/>
+    Pincode:<input type="number" required="required" id="pin" name="pinc"><br/>
+    FoodType:<select id="foodcode" name="food">
+  <option value="01">Cooked Veg</option>
+  <option value="10">Cooked Non-Veg</option>
+        <option value="02">Raw Vegatable/Fruits</option>
+  <option value="00">PaniPuri</option>
+  <option value="03">Chat/BhelPuri</option>        
+  <option value="04">Juices</option>        
+  <option value="05">Raw Meat/fish</option>        
+  <option value="06">others..</option>        
+</select> <br/>
+            UniqueId:<input type="number" required="required" id="cd" name="id"  readonly >
+            <input type="button" value="Generate id" onclick="show()"><br/>
+            <input type="submit" name="sub" value="Register">
+        </form>
+        
+       <!--<div style="display:none;" id="code"><p>Your unique business code is generated:</p>
+        
+        <h1>The first two digit of your Unique Id code is you Last two digit of Pincode,Second two digit is the last two digit of your Mobile number Provided by you,and the third two digit is your food code,and Remaining digits are Random.</h1></div>-->
+     
+        <script>
+        function show()
+            {
+                var phone =document.getElementById("num").value;
+  lastnum1 = phone.toString().charAt( phone.length - 1 );
+   lastnum2 = phone.toString().charAt( phone.length - 2 );
+    phonenumcode=lastnum2+lastnum1;           
+                var pincod=document.getElementById("pin").value;
+                p1 = pincod.toString().charAt( pincod.length - 1 );
+                p2 = pincod.toString().charAt( pincod.length - 2 );
+                pin=p2+p1;
+                var fdcd=document.getElementById("foodcode").value;
+                 var uncode=(pin+phonenumcode+fdcd+"0").toString();
+                
+              // document.getElementById("code").style.display="block";
+                document.getElementById("cd").value=uncode;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<title>Street Food Cart</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    
+</head>
+<body>
+
+  <nav class="red" role="navigation">
+    <div class="nav-wrapper container">
+    
+    <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+    </a>  
+	        
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+     <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+     <li><a href="index.html">Home</a></li>
+     <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="index.html" class="breadcrumb">Home</a>
+        <a href="#!" class="breadcrumb">Business</a>
+	 <a class="waves-effect waves-light btn-large right" href="#modal1">Log In to Existing Account</a>
+      </div>
+    </div>
+  </nav>
+<div class="main">
+   <div class="container">
+      <h1 class="header center orange-text">Street Food Cart</h1>
+</div>
+
+	 <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">  
+    <div class="col s12 m4">
+    <div class="icon-block">
+    <div id="message-wrapper" class="span12 clearfix">
+    <h2 class="blue-text">Login</h2>
+    </div>
+    </div>
+    <fieldset>
+<form method="post" action="admin/login.php">
+  <div class="container">
+    <label><b>Aadhar Number/Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required><br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required><br>
+    <button type="submit">Login</button>
+    <input type="checkbox" id="test5" />
+    <label for="test5">Remember Me</label>
+    <input type="reset" value="Cancel">
+	</div>
+  <div class="container" style="background-color:#f1f1f1">
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+</fieldset>
+    </div>
+    </div>
+    </div>
+		  
+	  <div class="container" center>
+      <h2 class="header center black-text">Create a new account</h2>
+	  </div>
+	  
+	<fieldset>
+
+	<nav>
+    <div class="nav-wrapper">
+	<div class="orange">
+    <div class="col s12">
+ 	<h2 class="black-text">Personal Details:</h2>    
+	</div>
+	</div>
+    </div>
+    </nav>
+  
+	<form method="post" action="admin/register.php">
+  <div class="container">
+	<label><b>Full Name</b></label>
+    <input type="text" placeholder="Enter Your Full Name" name="fname" data-length="64" required><br>
+	<label><b>Father's Name</b></label>
+    <input type="text" placeholder="Enter Father name" name="fathername" required><br>
+	<label><b>Mother's Name</b></label>
+    <input type="text" placeholder="Enter Mother name" name="mothername" required><br>	
+    <label><b>Mobile Number</b></label>
+    <input type="text" placeholder="Enter Mobile Number" name="mobile" id="num" data-length="10" required><br>
+	<label><b>Date Of Birth</b></label>
+	<input type="text" class="datepicker" placeholder="Enter Your Birthday" name="dob"><br>
+
+    </fieldset>
+	
+	<nav>
+    <div class="nav-wrapper">
+	<div class="black">
+    <div class="col s12">
+ 	<h2 class="white-text">Business Details:</h2>    
+	</div>
+	</div>
+    </div>
+    </nav>
+	
+	<fieldset>
+	<label><b>Name of Shop</b></label>
+    <input type="text" placeholder="Enter shop name" name="shopname" required><br>
+		<label><b>Type of Food Sold</b></label>
+    <div class="input-field col s12"><br>
+    <select id="foodcode">
+      <option value="10">Cooked Veg</option>
+      <option value="20">Cooked Non-Veg</option>	  
+      <option value="30">Raw Vegatable/Fruits</option>
+	  <option value="40">PaniPuri</option>
+	  <option value="50">Chat/BhelPuri</option>
+	  <option value="60">Juices</option>
+	  <option value="70">Raw Meat/fish</option>
+	  <option value="80">others..</option>
+    </select>
+  </div>
+	<label><b>Nature of Food Sold</b></label>
+    <div class="input-field col s12"><br>
+    <select multiple>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Veg</option>
+      <option value="2">Non Veg</option>
+    </select>
+  </div>
+	<label><b>Time of Business</b></label>
+	<input type="time" class="timepicker"><br>
+	<label><b>Business location</b></label>
+    <label><b>Address</b></label><div  id="address" style="height:40px;width:40%;border:1px solid black;"></div>
+    Pincode:<input type="number" required="required" id="pin" name="pin"><br>
+    <button onclick="show()" style="cursor:pointer"><i class="fa fa-map" aria-hidden="true"></i>Hide</button>
+    <div id="map" style="height:400px;width:50%;"></div>
+    <br> UniqueId:<input type="number" required="required" id="cd" name="id"  readonly ><br>
+    <input type="button" value="Generate id" onclick="view()"><br>
+	<button type="submit" >Create Account</button>
+    <input type="checkbox" id="test5" />
+    <label for="test5">Remember Me</label>
+    <input type="reset" value="Cancel">
+    </div>
+    </form>	
+	</fieldset>
+	
+	  <footer class="page-footer red">
+    <div class="container">
+      <div class="row">
+        
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">This website is developed by a group of under-graduate students in order to present an active proposal for the problem of unorganised food sector in India. This website provides a platform which is user friendly for those businessmen/businesswomen who sell food items on the streets. Whether they are licensed or not government will provide assistance in setting up, maintaining , organising their source of income. The other option is to provide the citizen an information about all the types of food and food sellers present in their locality. Meaning a boost in business because many people can access it.</p>
+      </div>
+    </div>
+	
+    <div class="footer-copyright">
+      <div class="container">
+      Made by AD & Team>
+      </div>
+    </div>
+  </footer>
+  
+  
+<!--  Scripts-->
+<script>
+  function view()
+            {
+                var phone =document.getElementById("num").value;
+  lastnum1 = phone.toString().charAt( phone.length - 1 );
+   lastnum2 = phone.toString().charAt( phone.length - 2 );
+    phonenumcode=lastnum2+lastnum1;           
+                var pincod=document.getElementById("pin").value;
+                p1 = pincod.toString().charAt( pincod.length - 1 );
+                p2 = pincod.toString().charAt( pincod.length - 2 );
+                pin=p2+p1;
+                var fdcd=document.getElementById("num").value;
+                 var uncode=(pin+phonenumcode+fdcd+"0").toString();
+                
+              // document.getElementById("code").style.display="block";
+                document.getElementById("cd").value=uncode;
+            } 
+			</script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/modal1.js"></script>
+   <script src="js/pickatime.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxzS0XDivwbQjkFo8LSrLY4VNwzUkmsL4&callback=myownmap"></script>
+  
+  </body>
+</html>
